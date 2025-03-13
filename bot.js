@@ -30,7 +30,7 @@ bot.on('message', async (ctx) => {
 
     if (ctx.message.text === "Мілан") {
       const map = 'https://www.google.com/maps/place/%D0%BC%D1%96%D0%BB%D0%B0%D0%BD/data=!4m2!3m1!1s0x4786c1493f1275e7:0x3cffcd13c6740e8d?sa=X&ved=1t:155783&ictx=111'
-      ctx.reply("А там жде Оксана");
+      ctx.reply("А там маленька жде:)");
       ctx.reply(map);
     }
 
