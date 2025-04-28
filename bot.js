@@ -1,7 +1,7 @@
 const { Telegraf } = require('telegraf');
 const { MongoClient } = require('mongodb');
 
-// Создаём бота
+// Создаем бота
 const bot = new Telegraf('7535195778:AAHTR-q3Vo3HuDgnAzY_ff9WQsRm7wzepZk');
 
 // Подключение к базе данных MongoDB
@@ -15,7 +15,7 @@ let chatId = null; // переменная для хранения chatId
 bot.start((ctx) => {
   chatId = ctx.message.chat.id;  // Сохраняем chatId
   ctx.reply('Welcome to the bot!');
-  console.log('chatId:', chatId); // Выводим chatId в консоль
+  console.log('chatId:', chatId); // Выводим chatId в консоль для проверки
 });
 
 // Функция для отправки сообщения в Telegram
@@ -25,6 +25,8 @@ const sendTelegramMessage = async (message) => {
     if (chatId) {
       await bot.telegram.sendMessage(chatId, message);
       console.log('Сообщение отправлено:', message);
+    } else {
+      console.log('chatId еще не получен');
     }
   } catch (error) {
     console.error('Ошибка при отправке сообщения в Telegram:', error);
@@ -47,7 +49,8 @@ client.connect().then(() => {
       const newReview = change.fullDocument;
       
       // Форматируем сообщение, используя поля из базы данных
-      const message = `Новый отзыв от ${newReview.name} (Телефон: ${newReview.phone}):\n${newReview.message}`;
+      const message = `Новий відгук від ${newReview.name} (Телефон: ${newReview.phone}):\n${newReview.message}`;
+      console.log('fgdfgfghfghhfghg');
       await sendTelegramMessage(message);
     }
   });
