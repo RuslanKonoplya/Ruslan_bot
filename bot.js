@@ -61,6 +61,10 @@ client.connect().then(() => {
 });
 
 // Запуск бота
+//Изменяю код в основной ветке чтобы подтянуло на пк
+
+
+
 bot.launch();
 
 // Enable graceful stop
