@@ -72,3 +72,12 @@ bot.launch();
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
+
+
+
+
+
+
+
+//Изменяю код у себя локально нужно чтобы не пропал ёще что то делаю 
+//еще раз зменяю код
